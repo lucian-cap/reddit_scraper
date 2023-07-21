@@ -34,6 +34,8 @@ def scrape():
         
         posts[sub] = []
         for submission in reddit.subreddit(sub).top(time_filter = 'year', limit = NUM_POSTS):
+
+            #if we can't get a author for the post just skip it
             if submission.author is None:
                 continue
             
